@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Set up the Secret key used by Beaker and Flask
 # This can be overriden using a CKAN___BEAKER__SESSION__SECRET env var

@@ -6,9 +6,9 @@ ENV SRC_DIR=/srv/app/src
 ENV CKAN_INI=${APP_DIR}/ckan.ini
 ENV PIP_SRC=${SRC_DIR}
 ENV CKAN_STORAGE_PATH=/var/lib/ckan
-ENV GIT_URL=https://github.com/ckan/ckan.git
+ENV GIT_URL=https://github.com/depositar/ckan.git
 # CKAN version to build
-ENV GIT_BRANCH=ckan-2.9.8
+ENV GIT_BRANCH=release-data-depositar-io
 # Customize these on the .env file if needed
 ENV CKAN_SITE_URL=http://localhost:5000
 ENV CKAN__PLUGINS image_view text_view recline_view datastore datapusher envvars
@@ -88,7 +88,7 @@ RUN mkdir -p ${CKAN_STORAGE_PATH} && \
 
 COPY setup/prerun.py ${APP_DIR}
 COPY setup/start_ckan.sh ${APP_DIR}
-ADD https://raw.githubusercontent.com/ckan/ckan/${GIT_BRANCH}/wsgi.py ${APP_DIR}
+ADD https://raw.githubusercontent.com/depositar/ckan/${GIT_BRANCH}/wsgi.py ${APP_DIR}
 
 # Create entrypoint directory for children image scripts
 ONBUILD RUN mkdir /docker-entrypoint.d
