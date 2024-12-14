@@ -1,0 +1,14 @@
+name: Build and push the master images
+
+on:
+  schedule:
+    - cron: "15 5 * * *"
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable-docker-publish.yml
+    with:
+      ckan-major-version: "master"
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
