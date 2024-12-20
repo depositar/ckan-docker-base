@@ -10,9 +10,9 @@ set_vars() {
     ckan_version=$(cat "ckan-$ckan_version_ref/VERSION.txt")
     python_version=$(cat "ckan-$ckan_version_ref/PYTHON_VERSION.txt")
     python_dockerfile=Dockerfile.py$python_version
-    tag_name="ckan/ckan-$env:$ckan_version"
-    python_tag_name="ckan/ckan-$env:$ckan_version-py$python_version"
-    if [ "$ckan_version" = "master" ]; then
+    tag_name="depositar/ckan-$env:$ckan_version"
+    python_tag_name="depositar/ckan-$env:$ckan_version-py$python_version"
+    if [ "$ckan_version" = "master" ] || [ "$ckan_version" = "release-data-depositar-io" ]; then
         ckan_tag=$ckan_version
         alt_tag_name=$tag_name
         python_alt_tag_name=$python_tag_name
