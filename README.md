@@ -34,8 +34,8 @@ For instance:
 ```
 ./build.sh build 2.11
 
+./build.sh build depositar base
 ./build.sh build master
-./build.sh build depositar
 ./build.sh build 2.10 base
 ./build.sh build 2.9 dev
 ```
